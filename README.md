@@ -1,5 +1,5 @@
-# [https://www.gare.works](www.gare.works)
+# [www.gare.works](https://www.gare.works)
 
-Repository for the [https://www.gare.works](gare.works) website.
+Repository for the [gare.works](https://www.gare.works) website.
 
 No unauthorised reproduction is permitted.
