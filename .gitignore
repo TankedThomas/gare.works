@@ -1,6 +1,7 @@
-.sass-cache
-.jekyll-metadata
-*.code-workspace
-_site
 _posts
+_site
+.jekyll-metadata
+.sass-cache
+*.code-workspace
+*.markdown
 Rakefile
