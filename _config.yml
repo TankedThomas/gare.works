@@ -38,4 +38,4 @@ exclude:
   - Rakefile
   - admin # temporarily disable until ready
   - _posts #temporarily disable until ready
-  - *.code-workspace
+  - gare.code-workspace
