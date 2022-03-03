@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/jekyll/jekyll-admin
-  revision: 940d8f7032c74c089983e473b42a020a10b5dd10
-  specs:
-    jekyll-admin (0.11.0)
-      jekyll (>= 3.7, < 5.0)
-      sinatra (>= 1.4)
-      sinatra-contrib (>= 1.4)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -240,10 +231,7 @@ GEM
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     minitest (5.15.0)
-    multi_json (1.15.0)
     multipart-post (2.1.1)
-    mustermann (1.1.1)
-      ruby2_keywords (~> 0.0.1)
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     octokit (4.22.0)
@@ -253,9 +241,6 @@ GEM
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
     racc (1.6.0)
-    rack (2.2.3)
-    rack-protection (2.2.0)
-      rack
     rb-fsevent (0.11.1)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -276,21 +261,9 @@ GEM
       faraday (> 0.8, < 2.0)
     simpleidn (0.2.1)
       unf (~> 0.1.4)
-    sinatra (2.2.0)
-      mustermann (~> 1.0)
-      rack (~> 2.2)
-      rack-protection (= 2.2.0)
-      tilt (~> 2.0)
-    sinatra-contrib (2.2.0)
-      multi_json
-      mustermann (~> 1.0)
-      rack-protection (= 2.2.0)
-      sinatra (= 2.2.0)
-      tilt (~> 2.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thread_safe (0.3.6)
-    tilt (2.0.10)
     typhoeus (1.4.0)
       ethon (>= 0.9.0)
     tzinfo (1.2.9)
@@ -309,7 +282,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-admin!
   jekyll-coffeescript
   jekyll-default-layout
   jekyll-feed (~> 0.6)
