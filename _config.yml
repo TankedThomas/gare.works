@@ -1,7 +1,8 @@
 # Site settings
+encoding: utf-8
 title: Gare
 repository: TankedThomas/gare.works
-description: "Home of Gare."
+description: "Welcome to the home of Gare!"
 domain: tankedthomas.github.io
 url: https://www.gare.works # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: '' # the subpath of your site, e.g. /blog
@@ -24,6 +25,10 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-relative-links
 
+# Page settings
+page_excerpts: true
+# paginate: 5
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -37,4 +42,4 @@ exclude:
   - vendor/ruby/
   - Rakefile
   - gare.code-workspace
-  - 2022-03-02-welcome-to-jekyll.markdown
+  # - 2022-03-02-welcome-to-jekyll.markdown
