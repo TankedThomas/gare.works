@@ -3,8 +3,8 @@ title: Gare
 repository: TankedThomas/gare.works
 description: "Home of Gare."
 domain: tankedthomas.github.io
-url: https://tankedthomas.github.io # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: www.gare.works # the subpath of your site, e.g. /blog
+url: https://www.gare.works # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: '' # the subpath of your site, e.g. /blog
 github_username:  TankedThomas
 
 # Build settings
@@ -36,6 +36,5 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - Rakefile
-  - admin # temporarily disable until ready
-  - _posts #temporarily disable until ready
   - gare.code-workspace
+  - 2022-03-02-welcome-to-jekyll.markdown
