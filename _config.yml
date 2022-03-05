@@ -42,4 +42,4 @@ exclude:
   - vendor/ruby/
   - Rakefile
   - gare.code-workspace
-  # - 2022-03-02-welcome-to-jekyll.markdown
+  - 2022-03-02-welcome-to-jekyll.markdown
