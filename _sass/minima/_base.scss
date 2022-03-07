@@ -8,8 +8,6 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
-
 /**
  * Basic styling
  */
@@ -26,10 +24,17 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  margin: 0.5rem 0 0 0;
 }
-
-
-
+div {
+  font-size: $base-font-size;
+}
+nav {
+  color: $text-color;
+  font-family: $nav-font-family;
+  font-size: $nav-font-size;
+  width: max-content;
+}
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -40,16 +45,12 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
-
-
 /**
  * `main` element
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 }
-
-
 
 /**
  * Images
@@ -59,20 +60,15 @@ img {
   vertical-align: middle;
 }
 
-
-
 /**
  * Figures
  */
 figure > img {
   display: block;
 }
-
 figcaption {
   font-size: $small-font-size;
 }
-
-
 
 /**
  * Lists
@@ -80,15 +76,33 @@ figcaption {
 ul, ol {
   margin-left: $spacing-unit;
 }
-
 li {
   > ul,
   > ol {
     margin-bottom: 0;
   }
 }
+nav ul, nav ol {
+  margin: $nav-spacing-unit;
+  padding: 0.5rem 0rem 0.5rem 0rem;
+  list-style-type: none;
+  background-color: $background-color-light;
+}
+nav ul li {
+    display: inline-block;
+    padding: 0;
+}
 
+nav ul li a {
+  text-decoration: none;
+  padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  background-color: $background-color-light;
+}
 
+nav ul li a:hover {
+  padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  background-color: $grey-color-light;
+}
 
 /**
  * Headings
@@ -97,33 +111,26 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: $base-font-weight;
 }
 
-
-
 /**
  * Links
  */
 a {
   color: $brand-color;
   text-decoration: none;
-
   &:visited {
     color: darken($brand-color, 15%);
   }
-
   &:hover {
     color: $text-color;
     text-decoration: underline;
   }
-
   .social-media-list &:hover {
     text-decoration: none;
-
     .username {
       text-decoration: underline;
     }
   }
 }
-
 
 /**
  * Blockquotes
@@ -135,13 +142,10 @@ blockquote {
   @include relative-font-size(1.125);
   letter-spacing: -1px;
   font-style: italic;
-
   > :last-child {
     margin-bottom: 0;
   }
 }
-
-
 
 /**
  * Code formatting
@@ -153,23 +157,18 @@ code {
   border-radius: 3px;
   background-color: #eef;
 }
-
 code {
   padding: 1px 5px;
 }
-
 pre {
   padding: 8px 12px;
   overflow-x: auto;
-
   > code {
     border: 0;
     padding-right: 0;
     padding-left: 0;
   }
 }
-
-
 
 /**
  * Wrapper
@@ -182,7 +181,6 @@ pre {
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
   @extend %clearfix;
-
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
     max-width:         calc(#{$content-width} - (#{$spacing-unit}));
@@ -190,8 +188,6 @@ pre {
     padding-left: $spacing-unit / 2;
   }
 }
-
-
 
 /**
  * Clearfix
@@ -202,12 +198,9 @@ pre {
   clear: both;
 }
 
-
-
 /**
  * Icons
  */
-
 .svg-icon {
     width: 16px;
     height: 16px;
@@ -216,14 +209,23 @@ pre {
     padding-right: 5px;
     vertical-align: text-top;
 }
-
 .social-media-list {
   li + li {
     padding-top: 5px;
   }
 }
-
-
+/**
+ * Logos
+ */
+.logo-colour {
+  color:#c1272d;
+}
+.main-logo {
+  width:75%;
+}
+.sub-logo {
+  width:25%;
+}
 
 /**
  * Tables
