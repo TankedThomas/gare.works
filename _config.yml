@@ -24,6 +24,7 @@ plugins:
   - jekyll-readme-index
   - jekyll-titles-from-headings
   - jekyll-relative-links
+  - jekyll-spaceship
 
 # Page settings
 page_excerpts: true
