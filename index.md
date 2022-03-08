@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Gare | Home
+layout: home
+title: Home
 permalink: /
 ---
 

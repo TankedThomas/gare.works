@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: archive
 title: News
 permalink: /news/
 ---

@@ -2,7 +2,7 @@
 encoding: utf-8
 title: Gare
 repository: TankedThomas/gare.works
-description: "Welcome to the home of Gare!"
+description: 'Welcome to the home of Gare!'
 domain: tankedthomas.github.io
 url: https://www.gare.works # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: '' # the subpath of your site, e.g. /blog
@@ -10,8 +10,9 @@ github_username:  TankedThomas
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -25,6 +26,11 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-relative-links
   - jekyll-spaceship
+
+# Theme settings
+logo: '/assets/images/logo.png'
+site-logo: '/assets/images/logo.svg'
+logo_path: '/assets/images/logo.svg'
 
 # Page settings
 page_excerpts: true
@@ -43,4 +49,3 @@ exclude:
   - vendor/ruby/
   - Rakefile
   - gare.code-workspace
-  - 2022-03-02-welcome-to-jekyll.markdown
