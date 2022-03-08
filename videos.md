@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: videos
 title: Videos
 permalink: /videos/
 ---
