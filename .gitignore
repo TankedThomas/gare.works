@@ -2,5 +2,4 @@ _site
 .jekyll-metadata
 .sass-cache
 *.code-workspace
-*.markdown
 Rakefile
