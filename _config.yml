@@ -40,12 +40,12 @@ page_excerpts: true
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - Rakefile
-  - gare.code-workspace
+  - "*.code-workspace"
+  - "*.gemspec"
+  - "/vendor/"
+  - "Gemfile.lock"
+  - "Gemfile"
+  - "LICENSE.md"
+  - "node_modules"
+  - "Rakefile"
+  - "README.md"

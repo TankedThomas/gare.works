@@ -1,5 +1,9 @@
-_site
+*.code-workspace
+.bundle
+.DS_Store
 .jekyll-metadata
 .sass-cache
-*.code-workspace
+Gemfile.lock
 Rakefile
+vendor
+_site
