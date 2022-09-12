@@ -1,68 +1,69 @@
 // Contact Form Grid
 .contact-form {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    justify-content: center;
-    align-content: center;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr;
+	justify-content: center;
+	align-content: center;
+	width: 100vw;
+	margin: 0;
+	padding: 0;
 }
 .grid-header {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin: 0;
-    padding: 0.5rem 0;
+	grid-column: 1 / -1;
+	text-align: center;
+	margin: 0;
+	padding: 0.5rem 0;
 }
 .grid-form {
-    grid-row: 2 / 4;
-    grid-column: 1 / -1;
-    align-self: center;
-    justify-self: center;
+	grid-row: 2 / 4;
+	grid-column: 1 / -1;
+	align-self: center;
+	justify-self: center;
 }
 .grid-form-label {
-    justify-self: center;
-    width: 100%;
+	justify-self: center;
+	width: 100%;
 }
 .grid-form-item {
-    align-self: center;
-    justify-self: center;
-    width: 100%;
+	align-self: center;
+	justify-self: center;
+	width: 100%;
 }
 .grid-form-text {
-    align-self: center;
-    justify-self: center;
-    width: 100%;
-    height: 7rem;
+	align-self: center;
+	justify-self: center;
+	width: 100%;
+	height: 7rem;
 }
 .grid-form-btn {
-    align-self: center;
-    justify-self: center;
-    width: 25%;
+	align-self: center;
+	justify-self: center;
+	width: 25%;
 }
 // Contact Form Misc
-form.contact > 
-label, 
-input, 
+form.contact > label,
+input,
 textarea {
-    width: 20%;
+	width: 20%;
 }
-form.contact >
-textarea {
-    cursor: text;
+form.contact > textarea {
+	cursor: text;
 }
-form.contact >
 label {
-    cursor: auto;
+	cursor: default;
+	pointer-events: none;
 }
 #bots-r-us {
-    display: none;
+	display: none;
 }
 div.contact-form p {
-    margin-top: 0;
-    padding-top: 0;
+	margin-top: 0;
+	padding-top: 0;
 }
 div.captcha {
-    margin-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+.contact-success {
+	color: $success-color;
 }
