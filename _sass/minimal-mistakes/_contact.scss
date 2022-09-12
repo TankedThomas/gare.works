@@ -6,10 +6,14 @@
     justify-content: center;
     align-content: center;
     width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 .grid-header {
     grid-column: 1 / -1;
     text-align: center;
+    margin: 0;
+    padding: 0.5rem 0;
 }
 .grid-form {
     grid-row: 2 / 4;
@@ -18,7 +22,6 @@
     justify-self: center;
 }
 .grid-form-label {
-    align-self: left;
     justify-self: center;
     width: 100%;
 }
@@ -26,6 +29,12 @@
     align-self: center;
     justify-self: center;
     width: 100%;
+}
+.grid-form-text {
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: 7rem;
 }
 .grid-form-btn {
     align-self: center;
@@ -41,8 +50,6 @@ textarea {
 }
 form.contact >
 textarea {
-    height: 300px;
-    width: auto;
     cursor: text;
 }
 form.contact >
