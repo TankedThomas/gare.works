@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: "images/uploads"
+publish_mode: editorial_workflow
+collections:
+  - name: "news" # Used in routes, e.g., /admin/collections/blog
+    label: "News" # Used in the UI
+    folder: "_posts/news" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - { label: "Color", name: "color", widget: "color", enableAlpha: true, allowInput: true }
+      - {label: "Body", name: "body", widget: "markdown"}
+logo_url: "/images/logo.svg"
+search: true
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"

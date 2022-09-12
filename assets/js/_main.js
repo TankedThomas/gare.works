@@ -130,4 +130,27 @@ $(document).ready(function () {
 				$(this).append(anchor);
 			}
 		});
+
+	// window.onpopstate = function (event) {
+	// 	event.preventDefault();
+	// 	hash = location.pathname;
+	// 	loadPage(hash.replace("/contact/", ""));
+	// };
+	//   function processAjaxData(response, urlPath){
+	//     document.getElementById("content").innerHTML = response.html;
+	//     document.title = response.pageTitle;
+	//     window.history.pushState({"html":response.html,"pageTitle":response.pageTitle},"", urlPath);
+	// }
+	// window.onpopstate = function(e){
+	//   if(e.state){
+	//       document.getElementById("content").innerHTML = e.state.html;
+	//       document.title = e.state.pageTitle;
+	//   }
+	// };
+
+	function contactSuccess() {
+		if (window.location.href == "/success/") {
+			window.history.pushState("data", "Contact", "/contact/");
+		}
+	}
 });

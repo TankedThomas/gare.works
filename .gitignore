@@ -6,4 +6,7 @@
 Gemfile.lock
 Rakefile
 vendor
-_site
+_site/contact-form/node_modules/
+/contact-form/out/
+/contact/node_modules/
+/contact/build/
