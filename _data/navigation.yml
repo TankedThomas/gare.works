@@ -4,5 +4,7 @@ main:
     url: /videos/
   - title: "News"
     url: /news/
+  - title: "Contact"
+    url: /contact/
   - title: "About"
     url: /about/

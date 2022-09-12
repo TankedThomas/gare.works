@@ -1,8 +1,8 @@
 # Site settings
-encoding: utf-8
+encoding: UTF-8
 title: Gare
 repository: TankedThomas/gare.works
-description: 'Welcome to the home of Gare!'
+description: 'Welcome to Gare'
 domain: tankedthomas.github.io
 url: https://www.gare.works # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: '' # the subpath of your site, e.g. /blog
