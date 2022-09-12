@@ -1,6 +1,10 @@
 <div class="contact-form">
     <h2 class="grid-item grid-header">Contact Us</h2>
-    <form class="grid-item grid-form" name="contact" method="POST" data-netlify="true">
+    <form class="grid-item grid-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bots-r-us">
+        <p id="bots-r-us">
+            <label class="grid-form-label" for="name">Do Not Fill</label>
+            <input class="grid-form-item" type="text" name="bots-r-us">
+        </p>
         <p>
             <label class="grid-form-label" for="name">Name</label>
             <input class="grid-form-item" type="text" id="name" name="name">
@@ -17,6 +21,7 @@
             <label class="grid-form-label" for="message">Message</label>
             <textarea class="grid-form-text" id="message" name="message"></textarea>
         </p>
+        <div data-netlify-recaptcha="true"></div>
         <p>
             <button class="grid-form-btn" type="submit">Send</button>
         </p>
