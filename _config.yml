@@ -2,11 +2,11 @@
 encoding: UTF-8
 title: Gare
 repository: TankedThomas/gare.works
-description: 'Welcome to Gare'
+description: "Welcome to Gare"
 domain: tankedthomas.github.io
 url: https://www.gare.works # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: '' # the subpath of your site, e.g. /blog
-github_username:  TankedThomas
+baseurl: "" # the subpath of your site, e.g. /blog
+github_username: TankedThomas
 
 # Build settings
 markdown: kramdown
@@ -28,9 +28,9 @@ plugins:
   - jekyll-spaceship
 
 # Theme settings
-logo: '/assets/images/logo.png'
-site-logo: '/assets/images/logo.svg'
-logo_path: '/assets/images/logo.svg'
+logo: "/assets/images/logo.png"
+site-logo: "/assets/images/logo.svg"
+logo_path: "/assets/images/logo.svg"
 
 # Page settings
 page_excerpts: true
@@ -43,6 +43,7 @@ exclude:
   - "*.code-workspace"
   - "*.gemspec"
   - "/vendor/"
+  - "contact-form"
   - "Gemfile.lock"
   - "Gemfile"
   - "LICENSE.md"
