@@ -1,9 +1,10 @@
 ---
-layout: news
+layout: posts
 title: Contact Form Currently Broken
 date: 2022-09-14T10:25:00.000Z
+categories: news
 draft: false
-thumbnail: /images/uploads/poster1.png
+thumbnail: /assets/images/uploads/poster1.png
 color: "#ff0500"
 ---
 
