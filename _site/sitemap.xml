@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://www.gare.works/news/2022/03/08/welcome-to-gare.html</loc>
+<loc>http://localhost:4000/news/2022/03/08/welcome-to-gare.html</loc>
 <lastmod>2022-03-08T16:35:54+13:00</lastmod>
 </url>
 <url>
-<loc>https://www.gare.works/about/</loc>
+<loc>http://localhost:4000/about/</loc>
 </url>
 <url>
-<loc>https://www.gare.works/contact/</loc>
+<loc>http://localhost:4000/contact/</loc>
 </url>
 <url>
-<loc>https://www.gare.works/</loc>
+<loc>http://localhost:4000/</loc>
 </url>
 <url>
-<loc>https://www.gare.works/news/</loc>
+<loc>http://localhost:4000/news/</loc>
 </url>
 <url>
-<loc>https://www.gare.works/success.html</loc>
+<loc>http://localhost:4000/success.html</loc>
 </url>
 <url>
-<loc>https://www.gare.works/videos/</loc>
+<loc>http://localhost:4000/videos/</loc>
 </url>
 <url>
-<loc>https://www.gare.works/admin/</loc>
+<loc>http://localhost:4000/admin/</loc>
 <lastmod>2022-03-03T22:08:47+13:00</lastmod>
 </url>
 </urlset>
