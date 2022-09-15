@@ -28,7 +28,7 @@
 .grid-form-item {
 	align-self: center;
 	justify-self: center;
-	width: 100%;
+	width: 20rem;
 }
 .grid-form-text {
 	align-self: center;
@@ -66,4 +66,5 @@ div.captcha {
 }
 .contact-success {
 	color: $success-color;
+	text-align: center;
 }
