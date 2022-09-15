@@ -15,10 +15,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "purge": "rm -rf ../contact/static && cp -fR ./build/* ../contact",
-    "frontmatter": "echo '---\ntitle: Contact\nlayout: default\npermalink: /contact/\n---\n' | cat - ../contact/index.html > temp && mv temp ../contact/index.html",
-    "deploy": "npm run purge && npm run frontmatter"
   },
   "eslintConfig": {
     "extends": [
