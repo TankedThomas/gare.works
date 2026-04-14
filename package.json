@@ -15,7 +15,6 @@
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
-    "@rollup/rollup-win32-x64-msvc": "^4.60.1",
     "astro": "^6.1.6",
     "axios": "^1.15.0",
     "font-awesome": "^4.7.0",
