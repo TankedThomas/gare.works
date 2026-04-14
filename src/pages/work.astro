@@ -1,0 +1,80 @@
+---
+import Icon from "../components/icons/Icon.astro";
+import Layout from "../layouts/Layout.astro";
+
+const strips = [
+	{icon: "computer", label: "Custom Computers", descColour: "rgba(193, 39, 44, 0.522);", iconColour: "rgba(193, 39, 98, 0.522);"},
+	{icon: "toolbox", label: "Repairs and Servicing", descColour: "rgba(193, 113, 39, 0.522);", iconColour: "rgba(193, 178, 39, 0.522);"},
+	{icon: "globe", label: "Website Design", descColour: "rgba(150, 193, 39, 0.522);", iconColour: "rgba(39, 193, 36, 0.522);"},
+	{icon: "gamepad", label: "Game Console Mods", descColour: "rgba(39, 193, 115, 0.522);", iconColour: "rgba(39, 131, 158, 0.522);"},
+	{icon: "microchip", label: "Homebrew Hardware", descColour: "rgba(39, 155, 240, 0.522);", iconColour: "rgba(39, 75, 193, 0.522);"},
+	{icon: "clipboard-question", label: "IT Consulting", descColour: "rgba(167, 50, 200, 0.522);", iconColour: "rgba(85, 15, 173, 0.522);"}
+];
+---
+
+<Layout title="Work">
+	<main>
+		<div class="container">
+			<h2>Our Services</h2>
+			{
+				strips.map((strip, i) => (
+					<div class="work-strip" style={i % 2 === 0 ? "" : "direction: rtl;"}>
+						<div class="work-desc" style={`background-color: ${strip.descColour}`}>
+							<h2>{strip.label}</h2>
+						</div>
+						<div class="work-icon" style={`background-color: ${strip.iconColour}`}>
+							<Icon name={strip.icon} />
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 600px;
+		font-size: clamp(0.9rem, 2vw, 1.2rem);
+		padding: 1rem;
+	}
+
+	h2 {
+		text-align: center;
+		margin: 0;
+	}
+
+	.work-strip {
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		align-items: stretch;
+		font-weight: bold;
+		min-height: 120px;
+		padding: 0.3rem;
+	}
+
+	.work-desc {
+		padding: 1.5rem 2rem;
+	}
+
+	.work-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 1.5rem;
+		justify-content: center;
+	}
+
+	.work-icon :global(.svg-inline--fa) {
+		height: 3rem;
+		width: auto;
+		padding: 0;
+	}
+
+	.work-desc,
+	.work-icon {
+		display: flex;
+		direction: ltr;
+		align-items: center;
+	}
+</style>

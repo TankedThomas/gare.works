@@ -1,0 +1,82 @@
+---
+import SiteLogo from "../assets/SiteLogo.astro";
+import Icon from "./icons/Icon.astro";
+import DesktopNav from "./nav/DesktopNav.astro";
+import MobileNav from "./nav/MobileNav.astro";
+---
+
+<header>
+	<div class="container-header">
+		<div class="logo">
+			<div><SiteLogo /></div>
+		</div>
+		<details>
+			<summary>
+				<Icon name="bars" />
+			</summary>
+			<MobileNav />
+		</details>
+		<DesktopNav />
+	</div>
+</header>
+
+<style>
+	header {
+		width: 100%;
+		background-color: rgb(220, 220, 220);
+		position: sticky;
+		top: 0;
+		z-index: 100;
+	}
+
+	details {
+		position: static;
+	}
+
+	details[open] :global(nav) {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background-color: rgb(220, 220, 220);
+		z-index: 10;
+		padding: 1rem;
+	}
+
+	details summary {
+		list-style: none;
+		padding: 1rem;
+		cursor: pointer;
+	}
+
+	.logo {
+		width: 18%;
+		min-width: 80px;
+		max-width: 300px;
+		padding: 0.75rem 0.75rem 0 1rem;
+		flex-shrink: 0;
+	}
+
+	@media (min-width: 640px) {
+		.container-header {
+			padding: 0.7rem 2rem 0.2rem 2rem;
+		}
+		details {
+			display: none;
+		}
+		.logo {
+			padding: 0;
+		}
+	}
+</style>
+
+<script>
+	const navDetails = document.querySelector("header details");
+
+	document.addEventListener("click", (event) => {
+		if (!navDetails) return;
+		if (!navDetails.contains(event.target as Node)) {
+			navDetails.removeAttribute("open");
+		}
+	});
+</script>

@@ -1,0 +1,104 @@
+.card {
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	padding: 1rem;
+	margin: 0rem;
+	background-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	transition:
+		transform 0.05s ease,
+		box-shadow 0.05s ease;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto;
+	grid-template-areas:
+		"title"
+		"description"
+		"info";
+
+	&:hover,
+	&:active,
+	&:focus {
+		box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+	}
+
+	&:hover h3,
+	&:active h3,
+	&:focus h3 {
+		color: #c1272d;
+	}
+}
+
+a.card {
+	text-decoration: none;
+
+	&:visited,
+	&:hover,
+	&:active,
+	&.active,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.card-header h3 {
+	color: #333;
+	margin: 0;
+	font-size: 1rem;
+	font-family: "Josefin Sans", sans-serif;
+}
+
+.card p {
+	color: #333;
+	margin: 0;
+	font-size: 0.7rem;
+	margin-top: 0.5rem;
+}
+
+.card-header {
+	text-decoration: none;
+	font-weight: bold;
+	color: #333;
+	display: block;
+	margin-bottom: 0.5rem;
+	grid-area: title;
+}
+
+.card-meta {
+	display: flex;
+	margin-top: 0.5rem;
+	justify-content: flex-end;
+	font-family: "Roboto Mono", monospace;
+	font-size: 0.9rem;
+	color: #333;
+	width: auto;
+	bottom: 0;
+	align-self: end;
+	grid-area: info;
+}
+
+.card-tag {
+	display: inline-block;
+	align-self: start;
+	grid-area: info;
+	width: auto;
+	height: auto;
+	align-self: end;
+}
+
+.card-bullet {
+	display: inline-flex;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin-right: -4px;
+	margin-top: 0.5rem;
+}
+
+.card-tag-text {
+	color: #333;
+	font-family: "Roboto Mono", monospace;
+	font-size: 0.95rem;
+	width: auto;
+	height: auto;
+}

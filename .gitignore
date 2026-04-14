@@ -1,24 +1,45 @@
-*.code-workspace
-.bundle
-.DS_Store
-.DS_Store?
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.jekyll-metadata
-.pnp
-.pnp.js
-.sass-cache
-.Spotlight-V100
-.Trashes
-build
-ehthumbs.db
-Gemfile.lock
-node_modules
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
 npm-debug.log*
-Rakefile
-Thumbs.db
-vendor
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# environment variables
+.env
+.env.production
+
+# Workspace directories and files
+.eslintrc
+.eslintrc.cjs
+.vscode/*
+.vscode/extensions.json
+*.code-workspace
+
+# Operating system directories and files
+## Linux
+*.~
+.Trash*
+## macOS
+__MACOSX
+.DS_Store
+.Spotlight-V100
+## Windows
+Desktop.ini
+Thumbs.db
+
+# jetbrains setting folder
+.idea/
+
+# Netlify
+.netlify
+netlify.toml
+deno.lock

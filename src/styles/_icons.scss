@@ -1,0 +1,22 @@
+.svg-inline--fa {
+	overflow: visible;
+	box-sizing: content-box;
+	display: inline-flex;
+	height: 1.5rem;
+	vertical-align: -0.125em;
+	padding: 0 1rem;
+}
+
+.card-header .svg-inline--fa {
+	height: 1rem;
+	padding: 0 0.5rem 0 0;
+}
+
+.card-meta .svg-inline--fa {
+	height: 1rem;
+	padding: 0;
+}
+
+.svg-inline--fa.fa-star {
+	color: #eac54f;
+}

@@ -1,0 +1,12 @@
+---
+import {icon, library} from "@fortawesome/fontawesome-svg-core";
+import {faMarkdown, faYoutube} from "@fortawesome/free-brands-svg-icons";
+import {faBars, faBookBookmark, faClipboardQuestion, faClosedCaptioning, faCodeFork, faComputer, faFile, faFileCode, faFileExcel, faFileLines, faFilePdf, faFilePowerpoint, faFileWord, faGamepad, faGlobe, faMicrochip, faStar, faToolbox} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faBars, faBookBookmark, faClipboardQuestion, faClosedCaptioning, faCodeFork, faComputer, faFile, faFileCode, faFileExcel, faFileLines, faFilePdf, faFilePowerpoint, faFileWord, faGamepad, faGlobe, faMicrochip, faStar, faToolbox, faMarkdown, faYoutube);
+
+const {name, prefix = "fas"} = Astro.props;
+const rendered = icon({prefix, iconName: name});
+---
+
+{rendered && <Fragment set:html={rendered.html} />}

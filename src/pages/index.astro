@@ -1,0 +1,61 @@
+---
+import Chips from "../assets/Chips.astro";
+import Keys from "../assets/Keys.astro";
+import Schematic from "../assets/Schematic.astro";
+import Spectrum from "../assets/Spectrum.astro";
+import Link from "../components/links/Link.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home">
+	<main>
+		<div class="container">
+			<div class="container-hero">
+				<section class="hero-text">
+					<h1>Welcome to Gare</h1>
+					<p>New Zealand Computer Specialists</p>
+				</section>
+				<div class="grid-hero">
+					<Keys />
+					<Spectrum />
+					<Chips />
+					<Schematic />
+				</div>
+				<section class="hero-bottom">
+					<p>Got a computer problem?</p>
+					<p><Link href="/contact" aria-label="contact">Get in touch.</Link></p>
+					<p>We'll fix your machine or build you a new one.</p>
+				</section>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: min(75ch, 100vw);
+		font-size: clamp(0.9rem, 2vw, 1.2rem);
+		padding: 1rem;
+	}
+
+	h1 {
+		text-align: center;
+		margin: 0;
+		color: #c1272d;
+	}
+
+	h2 {
+		text-align: center;
+		margin: 0;
+	}
+
+	.hero-text {
+		text-align: center;
+		padding: 1rem 0;
+	}
+
+	.hero-bottom {
+		text-align: center;
+		padding: 1rem 0;
+	}
+</style>

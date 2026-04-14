@@ -1,0 +1,58 @@
+---
+import fs from "node:fs";
+import path from "node:path";
+import FileCard from "./FileCard.astro";
+
+interface FileItem {
+	url: string;
+	name: string;
+	sizeKiB: string;
+	firstLine: string;
+}
+
+// Make prop name clearer
+const {dir = "/licenses"} = Astro.props as {dir?: string};
+
+// Normalise `/licenses` → `licenses`
+const normalised = dir.replace(/^\/+/, "");
+
+// Resolve to /public/licenses
+const fullPath = path.resolve("./public", normalised);
+
+// Read files
+const fileList: FileItem[] = fs
+	.readdirSync(fullPath)
+	.filter((name) => !name.startsWith(".")) // ignore hidden files like .DS_Store
+	.map((name) => {
+		const filePath = path.join(fullPath, name);
+		const stats = fs.statSync(filePath);
+
+		// Read only what we need — first line only
+		const firstLine = fs.readFileSync(filePath, "utf-8").split("\n")[0].trim();
+
+		return {
+			url: `/${normalised}/${name}`,
+			name,
+			sizeKiB: (stats.size / 1024).toFixed(2),
+			firstLine
+		};
+	});
+---
+
+<ul role="list" class="link-card-grid">
+	{fileList.map((file) => <FileCard file={file} />)}
+</ul>
+
+<style>
+	  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    list-style: none;
+  }
+
+	@media (max-width: 639px) {
+    .link-card-grid {
+      grid-template-columns: 1fr;
+    }
+</style>

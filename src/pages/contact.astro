@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+	<main>
+		<div class="contact-form">
+			<form name="contact" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" method="POST">
+				<h2>Contact Us</h2>
+				<p id="form-status" aria-live="polite"></p>
+				<p class="hidden">
+					<label>
+						Don&apos;t fill this out if you&apos;re human:
+						<input type="text" name="bot-field" />
+					</label>
+				</p>
+				<p>
+					<input type="hidden" value="contact" />
+					<label for="name">Name</label>
+					<input id="name" type="text" name="name" required />
+				</p>
+				<p>
+					<label for="email">Email</label>
+					<input id="email" type="email" name="email" required />
+				</p>
+				<p>
+					<label for="subject">Subject</label>
+					<input id="subject" type="text" name="subject" required />
+				</p>
+				<p>
+					<label for="message">Message</label>
+					<textarea id="message" name="message" required></textarea>
+				</p>
+				<div data-netlify-recaptcha="true"></div>
+				<p>
+					<button type="submit">Send</button>
+				</p>
+			</form>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 600px;
+		font-size: clamp(0.9rem, 2vw, 1.2rem);
+		padding: 1rem;
+	}
+
+	form {
+		background-color: rgb(220, 220, 220);
+		padding: 0.5rem 3rem;
+	}
+
+	@media (min-width: 640px) {
+		form {
+			margin-top: 1.2rem;
+		}
+	}
+
+	h2 {
+		text-align: center;
+		margin: 0;
+		padding-bottom: 1rem;
+	}
+
+	form p {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	label {
+		font-size: 1.2rem;
+		padding-bottom: 0.4rem;
+	}
+
+	input,
+	textarea {
+		border: 1px solid #cbd5e1;
+		font-size: 1rem;
+		padding: 0.5rem;
+		width: 100%;
+		font-family: inherit;
+	}
+
+	textarea {
+		height: 9rem;
+		resize: vertical;
+	}
+
+	@media (min-width: 640px) {
+		textarea {
+			height: 12rem;
+		}
+	}
+
+	button[type="submit"] {
+		display: block;
+		font-weight: bold;
+		border: 1px solid #333;
+		background-color: #cccccc;
+		color: #1e293b;
+		padding: 0.75rem;
+		font-size: 1rem;
+		width: 50%;
+		margin-inline: auto;
+		cursor: pointer;
+		transition:
+			background-color 0.05s ease,
+			box-shadow 0.05s ease;
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: rgba(193, 39, 44, 0.522);
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	form:has(:invalid) button[type="submit"] {
+		opacity: 0.5;
+		pointer-events: none;
+		cursor: not-allowed;
+		background-color: #cccccc;
+		box-shadow: none;
+	}
+
+	.hidden {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+
+	#form-status {
+		min-height: 1.5rem;
+		margin: 0;
+	}
+
+	#form-status.success {
+		color: #129b00;
+	}
+
+	#form-status.error {
+		color: #c1272c;
+	}
+</style>
+
+<script>
+	const form = document.querySelector("form") as HTMLFormElement;
+	const statusMsg = document.getElementById("form-status");
+
+	form?.addEventListener("submit", async (event) => {
+		event.preventDefault();
+		const formData = new FormData(form);
+
+		try {
+			const response = await fetch("/", {
+				method: "POST",
+				headers: {"Content-Type": "application/x-www-form-urlencoded"},
+				body: new URLSearchParams(formData as any).toString()
+			});
+
+			if (response.ok) {
+				form.reset();
+				if (statusMsg) {
+					statusMsg.textContent = "Your message has been sent successfully.";
+					statusMsg.className = "success";
+				}
+			} else {
+				if (statusMsg) {
+					statusMsg.textContent = "Something went wrong. Please try again.";
+					statusMsg.className = "error";
+				}
+			}
+		} catch {
+			if (statusMsg) {
+				statusMsg.textContent = "Something went wrong. Please try again.";
+				statusMsg.className = "error";
+			}
+		}
+	});
+</script>

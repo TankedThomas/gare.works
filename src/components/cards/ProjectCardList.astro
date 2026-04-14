@@ -1,0 +1,24 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+// Define an array of GitHub repository URLs
+const repoUrls = ["https://github.com/TankedThomas/ZX80", "https://github.com/TankedThomas/gb-rom-tool", "https://github.com/TankedThomas/windowsfixes", "https://github.com/TankedThomas/soic-24_to_dip-24_adapter", "https://github.com/TankedThomas/System.dat", "https://github.com/TankedThomas/Subtitles"];
+---
+
+<ul role="list" class="link-card-grid">
+	{repoUrls.map((url, index) => <ProjectCard key={index} url={url} />)}
+</ul>
+
+<style>
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    list-style: none;
+  }
+
+	@media (max-width: 639px) {
+    .link-card-grid {
+      grid-template-columns: 1fr;
+    }
+</style>

@@ -1,0 +1,62 @@
+---
+import VideoCard from "./cards/VideoCard.astro";
+
+const CHANNEL_ID = "UC8xfGe-G_bP9hLOFC98alSg";
+const MAX_VIDEOS = 8;
+
+interface Video {
+	id: string;
+	title: string;
+	published: Date;
+}
+
+let videos: Video[] = [];
+let error: string | null = null;
+
+try {
+	const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`);
+
+	if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+
+	const xml = await response.text();
+	const entries = xml.match(/<entry>[\s\S]*?<\/entry>/g) ?? [];
+
+	videos = entries.slice(0, MAX_VIDEOS).map((entry) => {
+		const videoId = entry.match(/<yt:videoId>(.*?)<\/yt:videoId>/)?.[1] ?? "";
+		const title = (entry.match(/<title>(.*?)<\/title>/)?.[1] ?? "")
+			.replace(/&amp;/g, "&")
+			.replace(/&lt;/g, "<")
+			.replace(/&gt;/g, ">")
+			.replace(/&quot;/g, '"')
+			.replace(/&#39;/g, "'");
+		const published = new Date(entry.match(/<published>(.*?)<\/published>/)?.[1] ?? "");
+		return {id: videoId, title, published};
+	});
+} catch (e) {
+	error = e instanceof Error ? e.message : "Unknown error";
+	console.error("YouTube fetch error:", error);
+}
+---
+
+{
+	error ? (
+		<p>Unable to load videos. Please try again later.</p>
+	) : videos.length === 0 ? (
+		<p>No videos found.</p>
+	) : (
+		<div class="video-grid">
+			{videos.map((video) => (
+				<VideoCard videoId={video.id} title={video.title} published={video.published} />
+			))}
+		</div>
+	)
+}
+
+<style>
+	.video-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+		width: 100%;
+	}
+</style>

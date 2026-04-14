@@ -1,0 +1,23 @@
+---
+const {href = "/", ...rest} = Astro.props;
+---
+
+<a href={href} {...rest}>
+	<slot />
+</a>
+
+<style>
+	a {
+		text-decoration: none;
+		color: #000;
+
+		&:hover,
+		&:active,
+		&.active,
+		&:focus {
+			cursor: pointer;
+			color: #c1272d;
+			background-size: 100% 5px;
+		}
+	}
+</style>

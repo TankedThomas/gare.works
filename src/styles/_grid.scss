@@ -1,0 +1,16 @@
+.grid-full-width {
+	grid-column: 1 / -1;
+}
+
+.grid-hero {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 1rem 0;
+}
+
+@media (max-width: 639px) {
+	.grid-hero {
+		grid-template-columns: 1fr;
+	}
+}

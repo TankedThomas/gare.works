@@ -1,0 +1,129 @@
+---
+import Icon from "../icons/Icon.astro";
+
+interface Props {
+	videoId: string;
+	title: string;
+	published: Date;
+}
+
+const {videoId, title, published} = Astro.props;
+const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`;
+---
+
+<div class="video-card" data-video-id={videoId} data-embed-url={embedUrl}>
+	<div class="video-thumbnail">
+		<img src={thumbnail} alt={title} loading="lazy" width={320} height={180} />
+		<button class="play-button" aria-label={`Play ${title}`}>
+			<Icon name="youtube" prefix="fab" />
+		</button>
+	</div>
+	<div class="video-info">
+		<h3>{title}</h3>
+		<p>{published.toLocaleDateString("en-NZ", {year: "numeric", month: "short", day: "numeric"})}</p>
+	</div>
+</div>
+
+<style>
+	.video-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.video-thumbnail {
+		position: relative;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		background: #000;
+		cursor: pointer;
+	}
+
+	.video-thumbnail img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		transition: opacity 0.15s ease;
+	}
+
+	.video-thumbnail:hover img {
+		opacity: 0.8;
+	}
+
+	.play-button {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		opacity: 0.9;
+		transition: opacity 0.05s ease;
+		color: #ff0000;
+		outline-color: #fff;
+	}
+
+	.play-button :global(.svg-inline--fa) {
+		height: 4rem;
+		width: auto;
+		padding: 0;
+	}
+
+	.video-thumbnail:hover .play-button svg {
+		opacity: 1;
+	}
+
+	.video-thumbnail iframe {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 0.95rem;
+		color: #333;
+		line-height: 1.3;
+	}
+
+	p {
+		margin: 0;
+		font-size: 0.8rem;
+		color: #4d4d4d;
+	}
+</style>
+
+<script>
+	document.querySelectorAll(".video-thumbnail").forEach((thumbnail) => {
+		thumbnail.addEventListener("click", () => {
+			const card = thumbnail.closest(".video-card") as HTMLElement;
+			const embedUrl = card?.dataset.embedUrl;
+			if (!embedUrl) return;
+
+			const iframe = document.createElement("iframe");
+			iframe.src = embedUrl;
+			iframe.title = card.querySelector("h3")?.textContent ?? "YouTube video";
+			iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+			iframe.allowFullscreen = true;
+
+			// Apply positioning directly since scoped CSS won't reach dynamic elements
+			iframe.style.cssText = `
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      `;
+
+			thumbnail.innerHTML = "";
+			thumbnail.appendChild(iframe);
+		});
+	});
+</script>

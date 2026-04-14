@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://sitemaps.org/schemas/sitemap/0.9 http://sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://gare.works/</loc>
+</url>
+<url>
+<loc>https://gare.works/404</loc>
+</url>
+<url>
+<loc>https://gare.works/about</loc>
+</url>
+<url>
+<loc>https://gare.works/contact</loc>
+</url>
+<url>
+<loc>https://gare.works/licenses</loc>
+</url>
+<url>
+<loc>https://gare.works/projects</loc>
+</url>
+<url>
+<loc>https://gare.works/videos/</loc>
+</url>
+<url>
+<loc>https://gare.works/work</loc>
+</url>
+</urlset>

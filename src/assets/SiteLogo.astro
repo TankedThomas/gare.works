@@ -1,0 +1,17 @@
+---
+import {Image} from "astro:assets";
+import Link from "../components/links/Link.astro";
+import HeadLogo from "./images/sitelogo.png";
+---
+
+<Link href="/" aria-label="Gare Logo">
+	<Image src={HeadLogo} alt="Gare Logo" loading="eager" fetchpriority="high" layout="constrained" format="avif" width={200} />
+</Link>
+
+<style>
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+</style>

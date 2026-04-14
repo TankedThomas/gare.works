@@ -1,0 +1,65 @@
+---
+import Icon from "../icons/Icon.astro";
+
+interface CardProps {
+	url: string;
+}
+
+import axios from "axios";
+const {url} = Astro.props as CardProps;
+
+// Fetch repository details based on the URL and render the card content
+async function fetchRepoDetails() {
+	try {
+		const response = await fetch(`https://api.github.com/repos${new URL(url).pathname}`, {
+			headers: {
+				Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`
+			}
+		});
+		if (!response.ok) {
+			throw new Error(`Failed to fetch data for repository: ${url}`);
+		}
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.error(error);
+		return null;
+	}
+}
+
+// Fetch repository language based on the URL
+const languageColorsResponse = await axios.get("https://raw.githubusercontent.com/TankedThomas/github-colors/master/colors.json");
+
+const repoDetails = await fetchRepoDetails();
+
+const languageColors = languageColorsResponse.data;
+const languageName = repoDetails?.language || "N/A";
+
+const color = languageColors[languageName] ? languageColors[languageName].color : "#c1272d";
+---
+
+<a class="card" href={url || "#"} target="_blank">
+	<div class="card-header">
+		<h3>
+			<Icon name="book-bookmark" />
+			{repoDetails?.name || "Loading..."}
+		</h3>
+	</div>
+	<p>{repoDetails?.description || "Loading..."}</p>
+	<span class="card-tag">
+		<span class="card-tag-text">
+			<span class="card-bullet" style={`background-color: ${color};`}></span>
+			{repoDetails?.language || "Misc"}
+		</span>
+	</span>
+	<div class="card-meta">
+		<span>
+			<Icon name="star" />
+			{repoDetails?.stargazers_count || 0}
+		</span>
+		<span style="margin-left: 16px;">
+			<Icon name="code-fork" />
+			{repoDetails?.forks_count || 0}
+		</span>
+	</div>
+</a>

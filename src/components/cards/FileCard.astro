@@ -1,0 +1,63 @@
+---
+import Icon from "../icons/Icon.astro";
+
+interface FileItem {
+	url: string;
+	name: string;
+	sizeKiB: string;
+	firstLine: string;
+}
+
+const {file} = Astro.props as {file: FileItem};
+
+const fullTitle = file.name.replace(/\.[^/.]+$/, "");
+const title = fullTitle.replace(/LICENSE_/, "").replace(/_/, " ");
+const ext = file.name.includes(".") ? (file.name.split(".").pop()?.toLowerCase() ?? "") : "";
+
+const iconMap: Record<string, {name: string; prefix?: string}> = {
+	pdf: {name: "file-pdf"},
+	xlsx: {name: "file-excel"},
+	docx: {name: "file-word"},
+	pptx: {name: "file-powerpoint"},
+	txt: {name: "file-lines"},
+	md: {name: "markdown", prefix: "fab"},
+	xml: {name: "file-code"},
+	ass: {name: "closed-captioning"}
+};
+
+const fileIcon = iconMap[ext] ?? {name: "file"};
+---
+
+<a class="card" href={file.url} target="_blank">
+	<div class="card-header">
+		<h3>
+			<Icon name={fileIcon.name} prefix={fileIcon.prefix ?? "fas"} />
+			{title}
+		</h3>
+	</div>
+	<span class="card-tag">
+		<span class="card-tag-text">
+			<span class="card-bullet"></span>
+			{file.firstLine}
+		</span>
+	</span>
+	<div class="card-meta">
+		<span>
+			<Icon name="database" />
+		</span>
+		<span>
+			{file.sizeKiB} KiB
+		</span>
+	</div>
+</a>
+
+<style>
+	.card {
+		grid-template-rows: auto 1fr;
+		grid-template-areas: "title" "info";
+	}
+
+	.card-bullet {
+		background-color: #333;
+	}
+</style>

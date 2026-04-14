@@ -1,0 +1,35 @@
+---
+const CurrentYear = new Date().getFullYear();
+import Link from "./links/Link.astro";
+---
+
+<footer transition:persist>
+	<small>
+		<p class="footer-links">
+			<Link href="https://github.com/TankedThomas/gare.works/issues" aria-label="GitHub Issues" target="_blank">Issues</Link> | <Link href="/licenses" aria-label="Licenses">Licenses</Link>
+		</p>
+		<p>
+			&copy; {CurrentYear}
+			<Link href="https://github.com/TankedThomas/gare.works/" aria-label="GitHub Repository">Gare Ltd</Link>
+		</p>
+	</small>
+</footer>
+
+<style>
+	footer {
+		display: flex;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		z-index: 100;
+		align-items: center;
+		justify-content: center;
+		background-color: rgb(220, 220, 220);
+	}
+
+	.footer-links {
+		align-items: center;
+		justify-content: space-between;
+	}
+</style>

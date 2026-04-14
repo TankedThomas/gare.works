@@ -1,0 +1,30 @@
+---
+import NavLink from "../links/NavLink.astro";
+---
+
+<nav>
+	<NavLink href="/" aria-label="Home">Home</NavLink>
+	<NavLink href="/work" aria-label="Work">Work</NavLink>
+	<NavLink href="/projects" aria-label="Projects">Projects</NavLink>
+	<NavLink href="/videos" aria-label="Videos">Videos</NavLink>
+	<NavLink href="/about" aria-label="About">About</NavLink>
+	<NavLink href="/contact" aria-label="Contact">Contact</NavLink>
+</nav>
+
+<style>
+	nav {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	nav :global(a) {
+		font-size: 1.1rem;
+	}
+
+	@media (min-width: 640px) {
+		nav {
+			display: none;
+		}
+	}
+</style>

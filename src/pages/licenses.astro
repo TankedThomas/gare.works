@@ -1,0 +1,25 @@
+---
+import FileCardList from "../components/cards/FileCardList.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Licenses">
+	<main>
+		<div class="container">
+			<article>
+				<FileCardList />
+			</article>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1.5rem;
+		max-width: min(75ch, 100vw);
+		font-size: clamp(0.9rem, 2vw, 1.2rem);
+		padding: 1rem;
+	}
+</style>
