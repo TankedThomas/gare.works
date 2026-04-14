@@ -31,7 +31,7 @@ import Layout from "../layouts/Layout.astro";
 					<label for="message">Message</label>
 					<textarea id="message" name="message" required></textarea>
 				</p>
-				<div data-netlify-recaptcha="true"></div>
+				<div class="captcha" data-netlify-recaptcha="true"></div>
 				<p>
 					<button type="submit">Send</button>
 				</p>
@@ -126,16 +126,6 @@ import Layout from "../layouts/Layout.astro";
 		box-shadow: none;
 	}
 
-	.hidden {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
-	}
-
 	#form-status {
 		min-height: 1.5rem;
 		margin: 0;
@@ -147,6 +137,20 @@ import Layout from "../layouts/Layout.astro";
 
 	#form-status.error {
 		color: #c1272c;
+	}
+
+	.hidden {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+
+	.captcha {
+		margin-inline: auto;
 	}
 </style>
 
