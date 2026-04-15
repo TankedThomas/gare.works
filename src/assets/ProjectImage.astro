@@ -1,0 +1,15 @@
+---
+import {Image} from "astro:assets";
+
+const {src, alt} = Astro.props;
+---
+
+<Image src={src} alt={alt} loading="lazy" layout="constrained" format="avif" width={600} />
+
+<style>
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+</style>
