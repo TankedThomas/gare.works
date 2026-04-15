@@ -1,7 +1,7 @@
 ---
 import {Image} from "astro:assets";
 
-const {src, alt, rotation = -3} = Astro.props;
+const {src, alt, rotation = 0} = Astro.props;
 ---
 
 <Image src={src} alt={alt} loading="eager" fetchpriority="high" layout="constrained" format="avif" width={696} style={`--rotation: ${rotation}deg`} />
@@ -12,6 +12,7 @@ const {src, alt, rotation = -3} = Astro.props;
 		width: 100%;
 		height: auto;
 		opacity: 0.5;
+		transform: rotate(var(--rotation));
 		transition:
 			transform 0.2s ease,
 			opacity 0.2s ease;
