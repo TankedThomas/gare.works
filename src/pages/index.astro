@@ -1,8 +1,9 @@
 ---
-import Chips from "../assets/Chips.astro";
-import Keys from "../assets/Keys.astro";
-import Schematic from "../assets/Schematic.astro";
-import Spectrum from "../assets/Spectrum.astro";
+import HeroImage from "../assets/HeroImage.astro";
+import Chips from "../assets/images/chips.tiff";
+import Keys from "../assets/images/keys.tiff";
+import Schematic from "../assets/images/schematic.tiff";
+import Spectrum from "../assets/images/spectrum.tiff";
 import Link from "../components/links/Link.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -16,10 +17,10 @@ import Layout from "../layouts/Layout.astro";
 					<p>New Zealand Computer Specialists</p>
 				</section>
 				<div class="grid-hero">
-					<Keys />
-					<Spectrum />
-					<Chips />
-					<Schematic />
+					<HeroImage src={Keys} alt="Keys" rotation={3} />
+					<HeroImage src={Spectrum} alt="Spectrum" rotation={-3} />
+					<HeroImage src={Chips} alt="Chips" rotation={3} />
+					<HeroImage src={Schematic} alt="Schematic" rotation={-3} />
 				</div>
 				<section class="hero-bottom">
 					<p>Got a computer problem?</p>

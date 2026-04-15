@@ -1,9 +1,10 @@
 ---
 import {Image} from "astro:assets";
-import Chip from "./images/chips.tiff";
+
+const {src, alt, rotation = -3} = Astro.props;
 ---
 
-<Image src={Chip} alt="Chips" loading="eager" fetchpriority="high" layout="constrained" format="avif" width={696} />
+<Image src={src} alt={alt} loading="eager" fetchpriority="high" layout="constrained" format="avif" width={696} style={`--rotation: ${rotation}deg`} />
 
 <style>
 	img {
@@ -11,7 +12,6 @@ import Chip from "./images/chips.tiff";
 		width: 100%;
 		height: auto;
 		opacity: 0.5;
-		transform: rotate(3deg);
 		transition:
 			transform 0.2s ease,
 			opacity 0.2s ease;
