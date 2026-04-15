@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ZX80 from "./zx80_readme.mdx";
+---
+
+<Layout title="ZX80">
+	<main class="container">
+		<ZX80 />
+	</main>
+</Layout>
+
+<style>
+	main {
+		max-width: 800px;
+		font-size: clamp(0.9rem, 2vw, 1.2rem);
+		padding: 1rem;
+	}
+
+	h2 {
+		text-align: center;
+		margin: 0;
+		padding-bottom: 1rem;
+	}
+	p {
+		text-align: justify;
+		padding: 0.9rem;
+	}
+</style>
