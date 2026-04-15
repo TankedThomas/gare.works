@@ -5,7 +5,7 @@ import Link from "./links/Link.astro";
 
 <footer transition:persist>
 	<small>
-		<p class="footer-links">
+		<p>
 			<Link href="https://github.com/TankedThomas/gare.works/issues" aria-label="GitHub Issues" target="_blank">Issues</Link> | <Link href="/licenses" aria-label="Licenses">Licenses</Link>
 		</p>
 		<p>
@@ -29,10 +29,8 @@ import Link from "./links/Link.astro";
 	}
 
 	p {
+		margin: 1rem;
 		padding: 0;
-	}
-
-	.footer-links {
 		align-items: center;
 		justify-content: space-between;
 	}
