@@ -1,14 +1,26 @@
 ---
 import ProjectCardList from "../components/cards/ProjectCardList.astro";
+import Link from "../components/links/Link.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Projects">
 	<main>
 		<div class="container">
-			<article>
-				<ProjectCardList />
-			</article>
+			<h2>Projects</h2>
+			<h3>Project Pages</h3>
+			<div class="project-links">
+				<Link href="/projects/zx80" aria-label="ZX80 Replica">ZX80 Replica</Link>
+				<Link href="/projects/gb-rom-tool" aria-label="gb-rom-tool">GB ROM Tool</Link>
+				<Link href="/projects/windowsfixes" aria-label="windowsfixes">Windows Fixes</Link>
+				<Link href="/projects/SOIC-24_to_DIP-24_Adapter" aria-label="SOIC-24_to_DIP-24_Adapter">SOIC-24 to DIP-24 Adapter</Link>
+				<Link href="/projects/System.dat" aria-label="">System.dat</Link>
+				<Link href="/projects/Subtitles" aria-label="">Subtitles</Link>
+				<Link href="/projects/" aria-label="">Coming Soon</Link>
+				<Link href="/projects/" aria-label="">Coming Soon</Link>
+			</div>
+			<h3>GitHub Repositories</h3>
+			<ProjectCardList />
 		</div>
 	</main>
 </Layout>
@@ -22,4 +34,44 @@ import Layout from "../layouts/Layout.astro";
 		font-size: clamp(0.9rem, 2vw, 1.2rem);
 		padding: 1rem;
 	}
+
+	h2 {
+		text-align: center;
+		margin: 0;
+		padding-bottom: 1rem;
+	}
+
+	h3 {
+		margin: 0;
+		padding-bottom: 1rem;
+	}
+
+	.project-links {
+		font-size: clamp(0.8rem, 2vw, 1.1rem);
+		font-weight: bold;
+		display: grid;
+		list-style: none;
+		grid-template-columns: repeat(4, 1fr);
+		margin-bottom: 2rem;
+		padding: 2rem 3rem 1rem 3rem;
+		background-color: rgba(255, 255, 255, 0.5);
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	}
+	.project-links > a {
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+		border-block-end: 1px solid #ccc;
+
+		&:nth-child(-n+4) {
+			border-block-start: 1px solid #ccc;
+			padding-top:1rem;
+		}
+	}
+
+	@media (max-width: 639px) {
+		.project-links {
+		grid-template-columns: 1fr;
+		}
 </style>
