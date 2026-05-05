@@ -12,7 +12,6 @@ export default defineConfig({
 
   experimental: {
     clientPrerender: true,
-    svgo: true,
   },
 
   image: {
