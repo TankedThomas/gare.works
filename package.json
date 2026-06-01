@@ -19,7 +19,7 @@
     "astro": "^6.3.5",
     "axios": "^1.16.1",
     "font-awesome": "^4.7.0",
-    "sass-embedded": "^1.99.0"
+    "sass-embedded": "^1.100.0"
   },
   "devDependencies": {
     "@types/node": "^25.9.0"
