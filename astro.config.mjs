@@ -15,7 +15,8 @@ export default defineConfig({
   },
 
   image: {
-    responsiveStyles: true
+    responsiveStyles: true,
+    dangerouslyProcessSVG: true,
   },
 
   integrations: [mdx()],
